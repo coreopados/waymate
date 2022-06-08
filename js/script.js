@@ -22,7 +22,7 @@ $(document).ready(function () {
     var swiper = new Swiper(".change", {
         direction: "vertical",
         loop: true,
-        slidesPerView: 8,
+        slidesPerView: 1,
         speed: 1000,
         autoplay: {
             delay: 1000,
