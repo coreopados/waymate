@@ -1,0 +1,136 @@
+.divBlock {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    .etc {
+        display: grid;
+        grid-template-columns: 1fr;
+        place-items: center;
+        color: $white;
+
+        &__description {
+            max-width: 670px;
+
+            .etc__icon {
+                max-width: 150px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 1rem;
+            }
+
+            .etc__title {
+                font-size: 5rem;
+                font-weight: 700;
+                text-align: center;
+                font-family: $sfCompact;
+            }
+
+            .etc__subtitle {
+                font-size: 3rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+                font-family: $sfCompact;
+                text-align: center;
+                color: $grey;
+            }
+
+            .etc__text {
+                font-size: 2.2rem;
+                line-height: 2.6rem;
+                font-family: $sfCompact;
+                font-weight: 500;
+
+                color: $dark-grey;
+                text-align: center;
+            }
+
+            .etc__buttons {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+                margin-top: 1.5rem;
+
+                .button-link {
+                    max-width: 270px;
+                }
+
+                .qr-link {
+                    position: relative;
+
+                    .tooltip {
+                        position: absolute;
+                        padding: 1rem;
+                        z-index: -1;
+                        opacity: 0;
+                        transform: translateY(-100%) translateX(-50%);
+                        left: 50%;
+                        top: -30px;
+                        transition: 0.2s;
+                        background: $blue;
+                        display: flex;
+                        flex-direction: column;
+                        border-radius: 15px;
+
+
+                        img {
+                            max-width: 200px;
+                        }
+
+                        .tooltip-note {
+                            font-size: 2rem;
+                            color: $white;
+                            margin-top: 0.5rem;
+                        }
+
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            left: 50%;
+                            transform: translate(-50%, 28px);
+                            bottom: 0;
+                            width: 0;
+                            height: 0;
+                            border-left: 20px solid transparent;
+                            border-right: 20px solid transparent;
+                            border-top: 30px solid $blue;
+                        }
+
+                        &.active {
+                            z-index: 1;
+                            opacity: 1;
+                            transition: 0.2s;
+                        }
+                    }
+
+                    .qr-hover {
+                        position: absolute;
+                        opacity: 0;
+                        left: 0;
+                        top: 0;
+                        transition: 0.2s;
+                    }
+
+                    .qr-norm {
+                        transition: 0.2s;
+                    }
+
+                    &.active,
+                    &:hover {
+                        .qr-hover {
+                            opacity: 1;
+                            transition: 0.2s;
+                        }
+
+                        .qr-norm {
+                            opacity: 0;
+                            transition: 0.2s;
+
+                        }
+
+                    }
+                }
+            }
+        }
+
+    }
+}
