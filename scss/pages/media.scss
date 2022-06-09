@@ -85,7 +85,7 @@
             right: 0;
             transform: translateX(100%);
             width: 100%;
-            top: 80px;
+            top: 90px;
             transition: 0.2s;
             background: $body-bg;
             height: 100%;
@@ -94,10 +94,11 @@
             align-items: center;
             justify-content: center;
 
+
             .menu {
                 flex-direction: column;
                 align-items: center;
-                transform: translateY(-100px);
+                transform: translateY(-35px);
                 gap: 1.5rem;
 
                 li {
@@ -202,7 +203,7 @@
     }
 
     header .header-wrap .nav {
-        top: 60px;
+        top: 70px;
     }
 
     .container {
@@ -234,6 +235,7 @@
 
     .divBlock .etc__description .etc__text {
         font-size: 1.8rem;
+        line-height: 2.3rem;
     }
 
     .divBlock .etc__description .etc__subtitle {
@@ -257,15 +259,37 @@
         height: 1rem;
     }
 
+    header .header-wrap .nav .menu li a:hover {
+        color: $dark-grey
+    }
+
+    .divBlock .etc__description .etc__subtitle {
+        max-width: unset;
+    }
+
     .divBlock .etc__description .etc__buttons .button-link {
         max-width: 200px
     }
 
-    .divBlock {
-        padding-top: 5rem;
-    }
+    // .divBlock {
+    //     padding-top: 5rem;
+    // }
 }
 
+@media screen and (max-width: 375px) {
+    .divBlock .etc__description .etc__subtitle {
+        font-size: 2rem;
+    }
+
+    .divBlock .etc__description .etc__text {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    // .divBlock {
+    //     padding-top: 4rem;
+    // }
+}
 
 @media screen and (max-height: 800px) and (min-width: 576px) {
     html {
@@ -273,7 +297,7 @@
     }
 
     header {
-        padding: 1.5rem 0;
+        padding: 1.5rem 0 0;
     }
 
     .change {
@@ -295,5 +319,129 @@
     .divBlock .etc__description .etc__text {
         font-size: 1.5rem;
         line-height: 2rem;
+    }
+}
+
+
+@media (hover: none) and (orientation: landscape) and (max-height:576px) {
+    header {
+        padding: 2vh 0;
+    }
+
+    header .header-wrap .logo {
+        font-size: 8vh;
+    }
+
+    header .header-wrap .nav .menu li a,
+    header .header-wrap .nav .menu li a:visited {
+        font-size: 4vh;
+    }
+
+    header .header-wrap .nav {
+        top: 11vh;
+    }
+
+    header .header-wrap .mobile-button .line {
+        width: 8vh;
+        height: 4vh;
+    }
+
+    .qr-link {
+        display: none;
+    }
+
+    .divBlock .etc__description .etc__icon {
+        max-width: 16.5vh;
+        margin-bottom: 2vh;
+    }
+
+    .divBlock .etc__description .etc__title {
+        font-size: 10vh;
+    }
+
+    .divBlock .etc__description .etc__subtitle {
+        font-size: 6vh;
+        max-width: 50vw;
+        margin-bottom: 2vh;
+    }
+
+    .divBlock .etc__description .etc__text {
+        font-size: 4vh;
+        line-height: 4.2vh;
+    }
+
+    .change {
+        height: 12vh;
+        margin-bottom: 2vh;
+    }
+
+    .divBlock .etc__description .etc__buttons {
+        margin: 3vh;
+    }
+
+    .divBlock .etc__description .etc__buttons .button-link {
+        max-width: 36vh;
+    }
+}
+
+@media (hover: none) and (orientation: landscape) and (max-height:380px) {
+    .content {
+        margin-top: 0;
+    }
+
+    .change {
+        height: 10vh;
+        margin-bottom: 2vh;
+    }
+
+    .divBlock .etc__description .etc__title {
+        font-size: 8vh;
+    }
+
+    .divBlock .etc__description .etc__subtitle {
+        font-size: 3vw;
+    }
+}
+
+@media (hover: none) and (orientation: portrait) and (max-width: 576px) {
+    .divBlock .etc__description .etc__icon {
+        max-width: 20vw
+    }
+
+    .change {
+        height: 13vw;
+    }
+
+    .divBlock .etc__description .etc__title {
+        font-size: 11vw;
+    }
+
+    .divBlock .etc__description .etc__subtitle {
+        font-size: 6vw;
+    }
+
+    .divBlock .etc__description .etc__text {
+        font-size: 4.5vw;
+        line-height: 5vw;
+    }
+
+    .divBlock .etc__description .etc__buttons .button-link {
+        max-width: 50vw;
+    }
+
+    header {
+        padding: 4vw 0;
+    }
+
+    header .header-wrap .logo {
+        font-size: 7vw;
+    }
+
+    header .header-wrap .nav {
+        top: 16vw;
+    }
+
+    header .header-wrap .nav .menu li a {
+        font-size: 5vw;
     }
 }

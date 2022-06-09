@@ -1,6 +1,10 @@
+.content {
+    margin: auto 0;
+}
+
 .divBlock {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    // padding-top: 3rem;
+    // padding-bottom: 3rem;
 
     .etc {
         display: grid;
@@ -12,6 +16,7 @@
             max-width: 670px;
 
             .etc__icon {
+                // max-width: 20.5vh;
                 max-width: 150px;
                 margin-left: auto;
                 margin-right: auto;
@@ -20,6 +25,7 @@
 
             .etc__title {
                 font-size: 5rem;
+                // font-size: 10vh;
                 font-weight: 700;
                 text-align: center;
                 font-family: $sfCompact;
@@ -27,6 +33,10 @@
 
             .etc__subtitle {
                 font-size: 3rem;
+                // font-size: 6vh;
+                max-width: 54vw;
+                margin-left: auto;
+                margin-right: auto;
                 font-weight: 600;
                 margin-bottom: 1rem;
                 font-family: $sfCompact;
@@ -36,10 +46,10 @@
 
             .etc__text {
                 font-size: 2.2rem;
+                // font-size: 4vh;
                 line-height: 2.6rem;
                 font-family: $sfCompact;
                 font-weight: 500;
-
                 color: $dark-grey;
                 text-align: center;
             }
@@ -52,6 +62,7 @@
 
                 .button-link {
                     max-width: 270px;
+                    // max-width: 36vh;
                 }
 
                 .qr-link {

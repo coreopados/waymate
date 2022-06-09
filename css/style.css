@@ -495,15 +495,27 @@ template,
           box-sizing: border-box; }
 
 html {
-  font-size: 16px;
-  overflow-x: hidden; }
+  font-size: 16px; }
 
 body {
   font-family: serif;
   font-family: "HelveticaNeueCyr";
-  background: #222524;
-  overflow-x: hidden;
-  position: relative; }
+  background: #222524; }
+
+.wrapper {
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%; }
 
 .container {
   margin: 0 auto;
@@ -513,7 +525,8 @@ body {
 .inner-container {
   max-width: 1200px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  padding-top: 30px; }
 
 p,
 h1,
@@ -575,7 +588,8 @@ p {
   overflow: hidden;
   height: 90px;
   position: relative;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  z-index: -1; }
   .change__list {
     margin-top: 0;
     text-align: center;
@@ -584,7 +598,7 @@ p {
       margin: 0; }
 
 header {
-  padding: 3.15rem 0; }
+  padding: 3.15rem 0 0; }
   header .header-wrap {
     display: -webkit-box;
     display: -webkit-flex;
@@ -602,7 +616,8 @@ header {
       font-size: 3.125rem;
       color: #fff;
       font-weight: 900;
-      font-family: "SF Pro Display"; }
+      font-family: "SF Pro Display";
+      cursor: pointer; }
     header .header-wrap .nav .mobile-button {
       display: none; }
     header .header-wrap .nav .menu {
@@ -611,137 +626,144 @@ header {
       display: -ms-flexbox;
       display: flex;
       gap: 1rem; }
-      header .header-wrap .nav .menu li a {
+      header .header-wrap .nav .menu li a,
+      header .header-wrap .nav .menu li a:visited {
         color: #777777;
         font-size: 1.5rem;
         font-family: "SF Pro Display"; }
-        header .header-wrap .nav .menu li a:hover {
+        header .header-wrap .nav .menu li a:hover,
+        header .header-wrap .nav .menu li a:visited:hover {
           color: #fff; }
-        header .header-wrap .nav .menu li a.active {
+        header .header-wrap .nav .menu li a.active,
+        header .header-wrap .nav .menu li a:visited.active {
           color: #fff;
           font-weight: 500;
-          text-decoration: unset; }
+          text-decoration: unset;
+          pointer-events: none; }
 
-.divBlock {
-  padding-top: 3rem;
-  padding-bottom: 3rem; }
-  .divBlock .etc {
-    display: grid;
-    grid-template-columns: 1fr;
-    place-items: center;
-    color: #fff; }
-    .divBlock .etc__description {
-      max-width: 670px; }
-      .divBlock .etc__description .etc__icon {
-        max-width: 150px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 1rem; }
-      .divBlock .etc__description .etc__title {
-        font-size: 5rem;
-        font-weight: 700;
-        text-align: center;
-        font-family: "SF Compact Display"; }
-      .divBlock .etc__description .etc__subtitle {
-        font-size: 3rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-        font-family: "SF Compact Display";
-        text-align: center;
-        color: #C1C1C1; }
-      .divBlock .etc__description .etc__text {
-        font-size: 2.2rem;
-        line-height: 2.6rem;
-        font-family: "SF Compact Display";
-        font-weight: 500;
-        color: #777777;
-        text-align: center; }
-      .divBlock .etc__description .etc__buttons {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-        gap: 1rem;
-        margin-top: 1.5rem; }
-        .divBlock .etc__description .etc__buttons .button-link {
-          max-width: 270px; }
-        .divBlock .etc__description .etc__buttons .qr-link {
-          position: relative; }
-          .divBlock .etc__description .etc__buttons .qr-link .tooltip {
+.content {
+  margin: auto 0; }
+
+.divBlock .etc {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  color: #fff; }
+  .divBlock .etc__description {
+    max-width: 670px; }
+    .divBlock .etc__description .etc__icon {
+      max-width: 150px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1rem; }
+    .divBlock .etc__description .etc__title {
+      font-size: 5rem;
+      font-weight: 700;
+      text-align: center;
+      font-family: "SF Compact Display"; }
+    .divBlock .etc__description .etc__subtitle {
+      font-size: 3rem;
+      max-width: 54vw;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-family: "SF Compact Display";
+      text-align: center;
+      color: #C1C1C1; }
+    .divBlock .etc__description .etc__text {
+      font-size: 2.2rem;
+      line-height: 2.6rem;
+      font-family: "SF Compact Display";
+      font-weight: 500;
+      color: #777777;
+      text-align: center; }
+    .divBlock .etc__description .etc__buttons {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem; }
+      .divBlock .etc__description .etc__buttons .button-link {
+        max-width: 270px; }
+      .divBlock .etc__description .etc__buttons .qr-link {
+        position: relative; }
+        .divBlock .etc__description .etc__buttons .qr-link .tooltip {
+          position: absolute;
+          padding: 1rem;
+          z-index: -1;
+          opacity: 0;
+          -webkit-transform: translateY(-100%) translateX(-50%);
+              -ms-transform: translateY(-100%) translateX(-50%);
+                  transform: translateY(-100%) translateX(-50%);
+          left: 50%;
+          top: -30px;
+          -webkit-transition: 0.2s;
+          -o-transition: 0.2s;
+          transition: 0.2s;
+          background: #006FEB;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          border-radius: 15px; }
+          .divBlock .etc__description .etc__buttons .qr-link .tooltip img {
+            max-width: 200px; }
+          .divBlock .etc__description .etc__buttons .qr-link .tooltip .tooltip-note {
+            font-size: 2rem;
+            color: #fff;
+            margin-top: 0.5rem; }
+          .divBlock .etc__description .etc__buttons .qr-link .tooltip:after {
+            content: '';
             position: absolute;
-            padding: 1rem;
-            z-index: -1;
-            opacity: 0;
-            -webkit-transform: translateY(-100%) translateX(-50%);
-                -ms-transform: translateY(-100%) translateX(-50%);
-                    transform: translateY(-100%) translateX(-50%);
             left: 50%;
-            top: -30px;
-            -webkit-transition: 0.2s;
-            -o-transition: 0.2s;
-            transition: 0.2s;
-            background: #006FEB;
-            display: -webkit-box;
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -webkit-flex-direction: column;
-                -ms-flex-direction: column;
-                    flex-direction: column;
-            border-radius: 15px; }
-            .divBlock .etc__description .etc__buttons .qr-link .tooltip img {
-              max-width: 200px; }
-            .divBlock .etc__description .etc__buttons .qr-link .tooltip .tooltip-note {
-              font-size: 2rem;
-              color: #fff;
-              margin-top: 0.5rem; }
-            .divBlock .etc__description .etc__buttons .qr-link .tooltip:after {
-              content: '';
-              position: absolute;
-              left: 50%;
-              -webkit-transform: translate(-50%, 28px);
-                  -ms-transform: translate(-50%, 28px);
-                      transform: translate(-50%, 28px);
-              bottom: 0;
-              width: 0;
-              height: 0;
-              border-left: 20px solid transparent;
-              border-right: 20px solid transparent;
-              border-top: 30px solid #006FEB; }
-            .divBlock .etc__description .etc__buttons .qr-link .tooltip.active {
-              z-index: 1;
-              opacity: 1;
-              -webkit-transition: 0.2s;
-              -o-transition: 0.2s;
-              transition: 0.2s; }
-          .divBlock .etc__description .etc__buttons .qr-link .qr-hover {
-            position: absolute;
-            opacity: 0;
-            left: 0;
-            top: 0;
-            -webkit-transition: 0.2s;
-            -o-transition: 0.2s;
-            transition: 0.2s; }
-          .divBlock .etc__description .etc__buttons .qr-link .qr-norm {
-            -webkit-transition: 0.2s;
-            -o-transition: 0.2s;
-            transition: 0.2s; }
-          .divBlock .etc__description .etc__buttons .qr-link.active .qr-hover, .divBlock .etc__description .etc__buttons .qr-link:hover .qr-hover {
+            -webkit-transform: translate(-50%, 28px);
+                -ms-transform: translate(-50%, 28px);
+                    transform: translate(-50%, 28px);
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 30px solid #006FEB; }
+          .divBlock .etc__description .etc__buttons .qr-link .tooltip.active {
+            z-index: 1;
             opacity: 1;
             -webkit-transition: 0.2s;
             -o-transition: 0.2s;
             transition: 0.2s; }
-          .divBlock .etc__description .etc__buttons .qr-link.active .qr-norm, .divBlock .etc__description .etc__buttons .qr-link:hover .qr-norm {
-            opacity: 0;
-            -webkit-transition: 0.2s;
-            -o-transition: 0.2s;
-            transition: 0.2s; }
+        .divBlock .etc__description .etc__buttons .qr-link .qr-hover {
+          position: absolute;
+          opacity: 0;
+          left: 0;
+          top: 0;
+          -webkit-transition: 0.2s;
+          -o-transition: 0.2s;
+          transition: 0.2s; }
+        .divBlock .etc__description .etc__buttons .qr-link .qr-norm {
+          -webkit-transition: 0.2s;
+          -o-transition: 0.2s;
+          transition: 0.2s; }
+        .divBlock .etc__description .etc__buttons .qr-link.active .qr-hover, .divBlock .etc__description .etc__buttons .qr-link:hover .qr-hover {
+          opacity: 1;
+          -webkit-transition: 0.2s;
+          -o-transition: 0.2s;
+          transition: 0.2s; }
+        .divBlock .etc__description .etc__buttons .qr-link.active .qr-norm, .divBlock .etc__description .etc__buttons .qr-link:hover .qr-norm {
+          opacity: 0;
+          -webkit-transition: 0.2s;
+          -o-transition: 0.2s;
+          transition: 0.2s; }
 
 @media screen and (max-width: 1200px) {
   .divBlock .etc__description {
@@ -821,7 +843,7 @@ header {
         -ms-transform: translateX(100%);
             transform: translateX(100%);
     width: 100%;
-    top: 80px;
+    top: 90px;
     -webkit-transition: 0.2s;
     -o-transition: 0.2s;
     transition: 0.2s;
@@ -850,9 +872,9 @@ header {
       -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center;
-      -webkit-transform: translateY(-100px);
-          -ms-transform: translateY(-100px);
-              transform: translateY(-100px);
+      -webkit-transform: translateY(-35px);
+          -ms-transform: translateY(-35px);
+              transform: translateY(-35px);
       gap: 1.5rem; }
       header .header-wrap .nav .menu li a {
         font-size: 3rem; }
@@ -949,7 +971,7 @@ header {
   header {
     padding: 2rem 0; }
   header .header-wrap .nav {
-    top: 60px; }
+    top: 70px; }
   .container {
     padding: 0 2rem; }
   .divBlock .etc__description .etc__icon {
@@ -968,7 +990,8 @@ header {
   .divBlock .etc__description .etc__icon {
     max-width: 110px; }
   .divBlock .etc__description .etc__text {
-    font-size: 1.8rem; }
+    font-size: 1.8rem;
+    line-height: 2.3rem; }
   .divBlock .etc__description .etc__subtitle {
     font-size: 2.6rem; }
   .divBlock .etc__description .etc__title {
@@ -980,16 +1003,25 @@ header {
   header .header-wrap .mobile-button .line {
     width: 2rem;
     height: 1rem; }
+  header .header-wrap .nav .menu li a:hover {
+    color: #777777; }
+  .divBlock .etc__description .etc__subtitle {
+    max-width: unset; }
   .divBlock .etc__description .etc__buttons .button-link {
-    max-width: 200px; }
-  .divBlock {
-    padding-top: 5rem; } }
+    max-width: 200px; } }
+
+@media screen and (max-width: 375px) {
+  .divBlock .etc__description .etc__subtitle {
+    font-size: 2rem; }
+  .divBlock .etc__description .etc__text {
+    font-size: 1.5rem;
+    line-height: 2rem; } }
 
 @media screen and (max-height: 800px) and (min-width: 576px) {
   html {
     font-size: 12px; }
   header {
-    padding: 1.5rem 0; }
+    padding: 1.5rem 0 0; }
   .change {
     height: 70px; }
   .divBlock {
@@ -1001,3 +1033,72 @@ header {
   .divBlock .etc__description .etc__text {
     font-size: 1.5rem;
     line-height: 2rem; } }
+
+@media (hover: none) and (orientation: landscape) and (max-height: 576px) {
+  header {
+    padding: 2vh 0; }
+  header .header-wrap .logo {
+    font-size: 8vh; }
+  header .header-wrap .nav .menu li a,
+  header .header-wrap .nav .menu li a:visited {
+    font-size: 4vh; }
+  header .header-wrap .nav {
+    top: 11vh; }
+  header .header-wrap .mobile-button .line {
+    width: 8vh;
+    height: 4vh; }
+  .qr-link {
+    display: none; }
+  .divBlock .etc__description .etc__icon {
+    max-width: 16.5vh;
+    margin-bottom: 2vh; }
+  .divBlock .etc__description .etc__title {
+    font-size: 10vh; }
+  .divBlock .etc__description .etc__subtitle {
+    font-size: 6vh;
+    max-width: 50vw;
+    margin-bottom: 2vh; }
+  .divBlock .etc__description .etc__text {
+    font-size: 4vh;
+    line-height: 4.2vh; }
+  .change {
+    height: 12vh;
+    margin-bottom: 2vh; }
+  .divBlock .etc__description .etc__buttons {
+    margin: 3vh; }
+  .divBlock .etc__description .etc__buttons .button-link {
+    max-width: 36vh; } }
+
+@media (hover: none) and (orientation: landscape) and (max-height: 380px) {
+  .content {
+    margin-top: 0; }
+  .change {
+    height: 10vh;
+    margin-bottom: 2vh; }
+  .divBlock .etc__description .etc__title {
+    font-size: 8vh; }
+  .divBlock .etc__description .etc__subtitle {
+    font-size: 3vw; } }
+
+@media (hover: none) and (orientation: portrait) and (max-width: 576px) {
+  .divBlock .etc__description .etc__icon {
+    max-width: 20vw; }
+  .change {
+    height: 13vw; }
+  .divBlock .etc__description .etc__title {
+    font-size: 11vw; }
+  .divBlock .etc__description .etc__subtitle {
+    font-size: 6vw; }
+  .divBlock .etc__description .etc__text {
+    font-size: 4.5vw;
+    line-height: 5vw; }
+  .divBlock .etc__description .etc__buttons .button-link {
+    max-width: 50vw; }
+  header {
+    padding: 4vw 0; }
+  header .header-wrap .logo {
+    font-size: 7vw; }
+  header .header-wrap .nav {
+    top: 16vw; }
+  header .header-wrap .nav .menu li a {
+    font-size: 5vw; } }

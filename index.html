@@ -3,86 +3,93 @@
 <head>
   <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1" />
   <title>Waymate</title>
-  <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="css/fonts.css" type="text/css" media="all" />
   <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
 </head>
 
 <body>
   <div class="shadow"></div>
-  <header>
-    <div class="container">
-      <div class="header-wrap">
-        <a href="index.html" class="logo">
-          Waymate
-        </a>
-        <div class="mobile-button">
-          <div class="line"></div>
+
+  <div class="wrapper">
+
+    <!-- header -->
+    <header>
+      <div class="container">
+        <div class="header-wrap">
+          <a href="/waymate.app" class="logo">
+            Waymate
+          </a>
+          <div class="mobile-button">
+            <div class="line"></div>
+          </div>
+          <nav class="nav">
+            <ul class="menu">
+              <li> <a href="privacy">Privacy Policy</a></li>
+              <li> <a href="https://www.microsoft.com"> Download Press Kit</a></li>
+              <li> <a href="mailto:tim@apple.com">Support</a></li>
+            </ul>
+          </nav>
         </div>
-        <nav class="nav">
-          <ul class="menu">
-            <li> <a href="privacy.html">Privacy Policy</a></li>
-            <li> <a href="https://www.microsoft.com"> Download Press Kit</a></li>
-            <li> <a href="mailto:tim@apple.com">Support</a></li>
-          </ul>
-        </nav>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <section>
-    <div class="container">
-      <div class="divBlock">
-        <div class="etc">
-          <div class="etc__description">
-            <div class="etc__icon">
-              <img src="img/app_icon.png" alt="">
-            </div>
+    <!-- content -->
+    <section class="content">
+      <div class="container">
+        <div class="divBlock">
+          <div class="etc">
+            <div class="etc__description">
+              <div class="etc__icon">
+                <img src="img/app_icon.png" alt="">
+              </div>
 
-            <div class="change swiper-container" dir="rtl">
-              <div class="change__list swiper-wrapper">
-                <li class="etc__title swiper-slide">Tokyo</li>
-                <li class="etc__title swiper-slide">Seoul</li>
-                <li class="etc__title swiper-slide">New York</li>
-                <li class="etc__title swiper-slide">Rome</li>
-                <li class="etc__title swiper-slide">Paris</li>
-                <li class="etc__title swiper-slide">Barcelona</li>
-                <li class="etc__title swiper-slide">London</li>
-                <li class="etc__title swiper-slide">Amsterdam</li>
+              <div class="change swiper-container">
+                <div class="change__list swiper-wrapper">
+                  <li class="etc__title swiper-slide">Tokyo</li>
+                  <li class="etc__title swiper-slide">Seoul</li>
+                  <li class="etc__title swiper-slide">New York</li>
+                  <li class="etc__title swiper-slide">Rome</li>
+                  <li class="etc__title swiper-slide">Paris</li>
+                  <li class="etc__title swiper-slide">Barcelona</li>
+                  <li class="etc__title swiper-slide">London</li>
+                  <li class="etc__title swiper-slide">Amsterdam</li>
+                </div>
+              </div>
+              <div class="etc__subtitle">Wherever you are, Waymate is always with you</div>
+              <div class="etc__text">Holiday trip? Business trip? Outdoor weekend? Waymate is what you need! The app
+                comes
+                with 500+ pre-loaded items that can cover almost 90% of trip needs.</div>
+              <div class="etc__buttons">
+                <a href="https://www.theverge.com" class="button-link">
+                  <img src="img/app-link.svg" alt="">
+                </a>
+                <a href="#" class="button-link qr-link">
+                  <div class="tooltip">
+                    <img src="img/qr.png" alt="">
 
+                    <div class="tooltip-note">
+                      Point <b>iPhone</b> <b>camera</b> at the <b>QR</b> code
+                    </div>
+                  </div>
+
+                  <img class="qr-norm" src="img/qr-norm.svg" alt="">
+                  <img class="qr-hover" src="img/qr-hover.svg" alt="">
+                </a>
               </div>
             </div>
-            <div class="etc__subtitle">Wherever you are, Waymate is always with you</div>
-            <div class="etc__text">Holiday trip? Business trip? Outdoor weekend? Waymate is what you need! The app comes
-              with 500+ pre-loaded items that can cover almost 90% of trip needs.</div>
-            <div class="etc__buttons">
-              <a href="https://www.theverge.com" class="button-link">
-                <img src="img/app-link.svg" alt="">
-              </a>
-              <a href="#" class="button-link qr-link">
-                <div class="tooltip">
-                  <img src="img/qr.png" alt="">
 
-                  <div class="tooltip-note">
-                    Point <b>iPhone</b> <b>camera</b> at the <b>QR</b> code
-                  </div>
-                </div>
-
-                <img class="qr-norm" src="img/qr-norm.svg" alt="">
-                <img class="qr-hover" src="img/qr-hover.svg" alt="">
-              </a>
-            </div>
           </div>
-
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+  </div>
 
   <script src="js/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="js/script.js"></script>
 </body>
